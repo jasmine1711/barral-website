@@ -68,7 +68,7 @@ export default function App() {
 
   return (
     <StoreProvider>
-      <div className={isNight ? 'night' : 'day'}>
+      <div className={`${isNight ? 'night dark' : 'day'}`}>
         <Toaster position="top-center" reverseOrder={false} />
         
         {transitionActive && <div className="theme-transition active" />}
