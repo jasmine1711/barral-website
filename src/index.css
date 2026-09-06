@@ -62,14 +62,12 @@ body {
   pointer-events: none;
 }
 
-/* IMAGE BLEND TRICKS (Makes white backgrounds disappear) */
-.light-mode-img {
-  mix-blend-mode: multiply;
+/* Clean Card Styling (No mix-blend-mode) */
+.card-image {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.dark-mode-img {
-  mix-blend-mode: screen;
-  filter: invert(1) hue-rotate(180deg) brightness(1.2) contrast(1.1);
+.card-image:hover {
+  transform: scale(1.05);
 }
 
 /* Theme Transition */

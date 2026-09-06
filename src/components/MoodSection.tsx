@@ -81,11 +81,11 @@ export default function MoodSection({ isNight }: MoodSectionProps) {
                 transition={{ delay: idx * 0.1 }}
                 className={`p-8 rounded-3xl shadow-2xl hover:scale-[1.02] transition-transform duration-300 flex gap-8 items-center ${isNight ? 'bg-[#1a1a2e]/60 border border-[#f0d67c]/20' : 'bg-white/70 border border-[#022F70]/10'}`}
               >
-                {/* Bigger Product Image */}
+                {/* Bigger Product Image with Natural Background */}
                 <div className="relative shrink-0">
                   <img 
                     src={drink.image} 
-                    className={`w-56 h-56 object-cover rounded-2xl shadow-2xl ${isNight ? 'dark-mode-img' : 'light-mode-img'}`} 
+                    className="w-56 h-56 object-cover rounded-2xl shadow-2xl" 
                   />
                   <div className="absolute -bottom-3 -right-3 bg-[#022F70] dark:bg-[#f0d67c] text-white dark:text-black text-sm font-bold px-4 py-1 rounded-full shadow-lg">
                     {drink.cupSize}

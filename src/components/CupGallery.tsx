@@ -24,7 +24,7 @@ export default function CupGallery({ isNight }: CupGalleryProps) {
               <div className="relative h-64 overflow-hidden">
                 <img 
                   src={cup.image} 
-                  className={`w-full h-full object-cover transition-transform duration-700 hover:scale-110 ${isNight ? 'dark-mode-img' : 'light-mode-img'}`} 
+                  className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
                 />
                 <div className="absolute top-3 right-3 bg-black/60 text-white text-xs px-3 py-1 rounded-full">
                   {cup.mood}
