@@ -46,23 +46,24 @@ The platform is built around 4 key pillars:
 
 ---
 
-### 🛠️ Tech Stack
+## 🛠️ Tech Stack
+
 This project is built using a modern, production-ready, and scalable stack:
 
-Layer	Technology	Purpose
-Frontend Framework	React 18 + Vite	Fast, modular, and highly optimized SPA
-Language	TypeScript	Ensures type safety, better maintainability, and fewer runtime errors
-Styling	Tailwind CSS	Utility-first CSS framework for rapid, responsive UI development
-Animations	Framer Motion	Advanced physics-based animations and transitions
-State Management	React Context API	Lightweight, global state for Auth, Cart, and Wishlist
-Routing	React Router DOM	Client-side routing and protected routes
-Media Storage & CDN	Cloudinary	Global CDN for storing, optimizing, and serving all images and videos with auto-compression
-Backend (BaaS)	Supabase	Serverless backend platform
-Database	Supabase PostgreSQL	Scalable, permanent relational database with Row-Level Security (RLS)
-Authentication	Supabase Auth	Secure JWT-based email/password authentication
-Notifications	React Hot Toast	Instant, modern user feedback
-Hosting	Vercel	Global Edge Network, zero-configuration, auto-scaling
-
+| Layer | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Frontend Framework** | React 18 + Vite | Fast, modular, and highly optimized SPA |
+| **Language** | TypeScript | Ensures type safety, better maintainability, and fewer runtime errors |
+| **Styling** | Tailwind CSS | Utility-first CSS framework for rapid, responsive UI development |
+| **Animations** | Framer Motion | Advanced physics-based animations and transitions |
+| **State Management** | React Context API | Lightweight, global state for Auth, Cart, and Wishlist |
+| **Routing** | React Router DOM | Client-side routing and protected routes |
+| **Media Storage & CDN** | Cloudinary | Global CDN for storing, optimizing, and serving all images and videos with auto-compression |
+| **Backend (BaaS)** | Supabase | Serverless backend platform |
+| **Database** | Supabase PostgreSQL | Scalable, permanent relational database with Row-Level Security (RLS) |
+| **Authentication** | Supabase Auth | Secure JWT-based email/password authentication |
+| **Notifications** | React Hot Toast | Instant, modern user feedback |
+| **Hosting** | Vercel | Global Edge Network, zero-configuration, auto-scaling |
 
 ---
 
