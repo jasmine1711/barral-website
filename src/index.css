@@ -2,13 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --day-bg: #FEF1CF;
-  --day-text: #022F70;
-  --night-bg: #04040c;
-  --night-text: #f0d67c;
-}
-
 body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
@@ -21,16 +14,16 @@ body {
 
 /* Day / Night classes */
 .day {
-  background-color: var(--day-bg);
-  color: var(--day-text);
+  background-color: #FEF1CF;
+  color: #022F70;
 }
 
 .night {
-  background-color: var(--night-bg);
-  color: var(--night-text);
+  background-color: #04040c;
+  color: #f0d67c;
 }
 
-/* Background Videos */
+/* Backgrounds */
 .day-bg-video {
   position: absolute;
   inset: 0;
@@ -38,7 +31,7 @@ body {
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 1; 
+  opacity: 1;
 }
 
 .night-bg-video {
@@ -62,14 +55,6 @@ body {
   pointer-events: none;
 }
 
-/* Clean Card Styling (No mix-blend-mode) */
-.card-image {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card-image:hover {
-  transform: scale(1.05);
-}
-
 /* Theme Transition */
 .theme-transition {
   position: fixed;
@@ -91,7 +76,7 @@ body {
   100% { background: transparent; }
 }
 
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar { width: 10px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #888; border-radius: 10px; }
