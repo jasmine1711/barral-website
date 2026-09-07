@@ -54,10 +54,13 @@ export default function MoodSection({ isNight }: MoodSectionProps) {
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             exit={{ opacity: 0, y: -20 }}
-            className="text-center mb-16 max-w-5xl mx-auto p-8 rounded-3xl border-2"
-            style={{ borderColor: currentSuggestion?.color, backgroundColor: isNight ? 'rgba(255,255,255,0.05)' : `${currentSuggestion?.color}15` }}
+            className={`text-center mb-16 max-w-5xl mx-auto p-8 rounded-3xl border-2 ${isNight ? 'night-border' : 'day-border'}`}
+            style={{ 
+              backgroundColor: isNight ? 'rgba(255,255,255,0.05)' : `${currentSuggestion?.color}15`,
+              color: isNight ? '#f0d67c' : currentSuggestion?.color 
+            }}
           >
-            <p className="font-display text-2xl font-medium leading-relaxed" style={{ color: isNight ? '#f0d67c' : currentSuggestion?.color }}>
+            <p className="font-display text-2xl font-medium leading-relaxed">
               {currentSuggestion?.suggestion}
             </p>
           </motion.div>
@@ -79,7 +82,7 @@ export default function MoodSection({ isNight }: MoodSectionProps) {
                 initial={{ opacity: 0, y: 20 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ delay: idx * 0.1 }}
-                className={`p-8 rounded-3xl shadow-2xl hover:scale-[1.02] transition-transform duration-300 flex gap-8 items-center ${isNight ? 'bg-[#1a1a2e]/60 border border-[#f0d67c]/20' : 'bg-white/70 border border-[#022F70]/10'}`}
+                className={`p-8 rounded-3xl shadow-2xl hover:scale-[1.02] transition-transform duration-300 flex gap-8 items-center ${isNight ? 'night-card' : 'day-card'}`}
               >
                 {/* Bigger Product Image with Natural Background */}
                 <div className="relative shrink-0">
@@ -87,21 +90,21 @@ export default function MoodSection({ isNight }: MoodSectionProps) {
                     src={drink.image} 
                     className="w-56 h-56 object-cover rounded-2xl shadow-2xl" 
                   />
-                  <div className="absolute -bottom-3 -right-3 bg-[#022F70] dark:bg-[#f0d67c] text-white dark:text-black text-sm font-bold px-4 py-1 rounded-full shadow-lg">
+                  <div className={`absolute -bottom-3 -right-3 text-sm font-bold px-4 py-1 rounded-full shadow-lg ${isNight ? 'night-badge' : 'day-badge'}`}>
                     {drink.cupSize}
                   </div>
                 </div>
                 
                 {/* Text Content */}
                 <div className="flex-1">
-                  <h3 className="font-display text-3xl font-bold mb-2">{drink.name}</h3>
+                  <h3 className={`font-display text-3xl font-bold mb-2 ${isNight ? 'night-text' : 'day-text'}`}>{drink.name}</h3>
                   <p className="text-sm font-semibold mb-3 uppercase tracking-wider" style={{ color: currentSuggestion?.color }}>
                     Mood: {drink.mood}
                   </p>
-                  <p className={`text-lg leading-relaxed mb-6 ${isNight ? 'text-[#f0d67c]/80' : 'text-gray-600'}`}>{drink.tagline}</p>
+                  <p className={`text-lg leading-relaxed mb-6 ${isNight ? 'night-subtext' : 'day-subtext'}`}>{drink.tagline}</p>
                   
                   <div className="flex items-center justify-between gap-4">
-                    <span className="text-3xl font-extrabold">₹{drink.price}</span>
+                    <span className={`text-3xl font-extrabold ${isNight ? 'night-text' : 'day-text'}`}>₹{drink.price}</span>
                     
                     <div className="flex gap-3">
                       <button 
