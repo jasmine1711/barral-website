@@ -5,6 +5,8 @@
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+  min-height: 100vh;
+  width: 100%;
 }
 
 body {
@@ -14,6 +16,14 @@ body {
 
 .font-display {
   font-family: 'Playfair Display', serif;
+}
+
+/* --- CRITICAL FIX: Ensure layout elements have width/height --- */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Day / Night classes */
@@ -27,7 +37,7 @@ body {
   color: #f0d67c;
 }
 
-/* Fixed Card Classes (Cannot be purged by Tailwind) */
+/* Fixed Card Classes */
 .day-card {
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(2, 47, 112, 0.1);
@@ -38,38 +48,32 @@ body {
   border: 1px solid rgba(240, 214, 124, 0.2);
 }
 
-.day-text {
-  color: #022F70;
+.day-text { color: #022F70; }
+.night-text { color: #f0d67c; }
+.day-subtext { color: #4a4a4a; }
+.night-subtext { color: rgba(240, 214, 124, 0.8); }
+.day-border { border-color: rgba(2, 47, 112, 0.2); }
+.night-border { border-color: rgba(240, 214, 124, 0.2); }
+.day-badge { background-color: #022F70; color: white; }
+.night-badge { background-color: #f0d67c; color: black; }
+
+/* --- Pure CSS Animations (Replaces Framer Motion Crash) --- */
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.night-text {
-  color: #f0d67c;
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
-.day-subtext {
-  color: #4a4a4a;
+.animate-fade-up {
+  animation: fadeUp 0.8s ease-out forwards;
 }
 
-.night-subtext {
-  color: rgba(240, 214, 124, 0.8);
-}
-
-.day-border {
-  border-color: rgba(2, 47, 112, 0.2);
-}
-
-.night-border {
-  border-color: rgba(240, 214, 124, 0.2);
-}
-
-.day-badge {
-  background-color: #022F70;
-  color: white;
-}
-
-.night-badge {
-  background-color: #f0d67c;
-  color: black;
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 /* Backgrounds */

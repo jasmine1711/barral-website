@@ -18,7 +18,7 @@ export default function Navbar({ onShowAlcoholic, isNight, toggleTheme }: Navbar
 
   return (
     <>
-      <Link to="/" className="fixed top-6 left-6 z-50 flex flex-col items-center group">
+      <Link to="/" className="fixed top-6 left-6 z-50 flex flex-col items-center group w-[200px]">
         <img 
           src="https://res.cloudinary.com/vwg7rayu/image/upload/v1788708726/logo_symbol.png" 
           alt="Barral Symbol" 
@@ -31,7 +31,7 @@ export default function Navbar({ onShowAlcoholic, isNight, toggleTheme }: Navbar
         />
       </Link>
 
-      <div className="fixed top-6 right-6 z-50 flex gap-3 items-center p-2 rounded-full bg-white/10 dark:bg-black/10 backdrop-blur-xl border border-white/20 shadow-2xl">
+      <div className="fixed top-6 right-6 z-50 w-[300px] md:w-auto flex gap-3 items-center p-2 rounded-full bg-white/10 dark:bg-black/10 backdrop-blur-xl border border-white/20 shadow-2xl">
         <Link 
           to="/" 
           className={`px-4 py-2 rounded-full font-semibold text-sm hover:opacity-80 ${isNight ? 'text-[#f0d67c]' : 'text-[#022F70]'}`}
@@ -45,7 +45,6 @@ export default function Navbar({ onShowAlcoholic, isNight, toggleTheme }: Navbar
           Drinks
         </Link>
         
-        {/* Cart Button */}
         <button 
           onClick={() => navigate('/checkout')} 
           className="relative p-2.5 rounded-full bg-white/20 hover:bg-white/40 transition flex items-center justify-center"
@@ -56,7 +55,6 @@ export default function Navbar({ onShowAlcoholic, isNight, toggleTheme }: Navbar
           {cart.length > 0 && <span className="absolute -top-1 -right-1 bg-[#9f200f] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">{cart.length}</span>}
         </button>
 
-        {/* Wishlist Button */}
         <button className="relative p-2.5 rounded-full bg-white/20 hover:bg-white/40 transition flex items-center justify-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#022F70] dark:text-[#f0d67c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
@@ -64,7 +62,6 @@ export default function Navbar({ onShowAlcoholic, isNight, toggleTheme }: Navbar
           {wishlist.length > 0 && <span className="absolute -top-1 -right-1 bg-[#17D1A5] text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">{wishlist.length}</span>}
         </button>
 
-        {/* Theme Toggle */}
         <button 
           onClick={toggleTheme} 
           className="p-2.5 rounded-full bg-white/20 hover:bg-white/40 transition flex items-center justify-center"
@@ -76,7 +73,6 @@ export default function Navbar({ onShowAlcoholic, isNight, toggleTheme }: Navbar
           )}
         </button>
 
-        {/* Alcoholic */}
         <button 
           onClick={onShowAlcoholic} 
           className="p-2.5 rounded-full bg-white/20 hover:bg-white/40 transition flex items-center justify-center"
@@ -84,7 +80,6 @@ export default function Navbar({ onShowAlcoholic, isNight, toggleTheme }: Navbar
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-[#9f200f] dark:text-[#f0d67c]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         </button>
 
-        {/* Auth Button */}
         {user ? (
           <button onClick={handleLogout} className="px-4 py-2 rounded-full text-sm font-semibold bg-[#9f200f] text-white hover:bg-[#7c8d30] transition">Logout</button>
         ) : (
